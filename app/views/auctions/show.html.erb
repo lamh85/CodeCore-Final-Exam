@@ -1,0 +1,44 @@
+<h1><%= @auction.title %></h1>
+
+Details:
+<br><%= @auction.details %>
+
+<p>
+Current Price: $<%= @auction.current_price %>
+
+<div id="auction-details">
+  <%= render "details" %>
+
+  <p>
+  Ends On:
+  <br><%= @auction.ends_on %>
+</div>
+
+<!-- Bid on this auction -->
+
+<div id="bid-errors"></div>
+
+<% if current_user %>
+  <% if @auction.user_id == current_user.id %>
+    *** You cannot bid on this auction because you created it ***
+  <% else %>
+    <h2>Bid on this auction</h2>
+    <div id="bid-form-section">
+      <%= render "/bids/form" %>
+    </div>
+  <% end %>
+<% end %>
+    
+<!-- List of bids -->
+
+<h2>Current bids</h2>
+
+<div id="bid-section">
+
+  <% if @auction.bids.length > 0 %>
+    <% @auction.bids.order(id: :desc).each do |bid| %>
+      <%= render partial: "/bids/bid", locals: {bid:bid} %>
+    <% end %>
+  <% end %>
+
+</div>

@@ -1,0 +1,3 @@
+<% if (@auction.current_price.to_i < @auction.price.to_i) == true %>
+  <br>Reserve price not met - Keep bidding!!!
+<% end %>

@@ -1,0 +1,12 @@
+<h1>All of my bids</h1>
+
+<% @bids.each do |bid| %>
+
+<p>$<%= bid.price %>
+<br>Auction: <%= bid.auction.title %>
+<br>Date: <%= bid.created_at %>
+
+<% end %>
+
+
+<!-- Make a page to list all the bids that someone has made on all the auctions. -->

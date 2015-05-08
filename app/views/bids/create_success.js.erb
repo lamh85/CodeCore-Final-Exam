@@ -1,0 +1,5 @@
+$('#bid-form-section .integer').val('');
+
+$('#bid-section').prepend('<%= j render partial: "/bids/bid", locals: {bid: @bid} %>').hide().fadeIn('slow');
+
+$('#auction-details').html('<%= j render partial: "details" %>');

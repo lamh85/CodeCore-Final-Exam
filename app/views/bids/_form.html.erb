@@ -1,0 +1,4 @@
+<%= simple_form_for @bid, url: auction_bids_path(@auction), remote: true do |f| %>
+  <%= f.input :price %>
+  <%= f.submit "Submit bid!" %>
+<% end %>

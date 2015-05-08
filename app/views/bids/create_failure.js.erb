@@ -1,0 +1,11 @@
+<% if @bid.errors.any? %>
+  <ul>
+  <% @bid.errors.full_messages.each do |msg| %>
+    $('#bid-errors').append('<li><%= j msg %></li>')
+  <% end %>
+  </ul>
+<% end %>
+
+<% if flash[:notice] || flash[:alert] %>
+  $('#flash').html('<% j flash[:notice] || flash[:alert] %>')
+<% end %>

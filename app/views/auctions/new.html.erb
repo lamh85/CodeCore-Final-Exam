@@ -1,0 +1,9 @@
+<h1>Create a new auction</h1>
+
+<%= simple_form_for @auction do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :ends_on %>
+  <%= f.input :price, label: "Reserve Price" %>
+  <%= f.submit "Create this auction!" %>
+<% end %>
